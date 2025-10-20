@@ -7,7 +7,6 @@ module axi_multiprotocol_tb ();
     localparam CLK_FREQ = 50000000;
     localparam uart_div = CLK_FREQ / 9600;
 
-
     reg ACLK, ARESETn;
 
     reg [31:0] S_AXI_AWADDR, S_AXI_WDATA, S_AXI_ARADDR;
