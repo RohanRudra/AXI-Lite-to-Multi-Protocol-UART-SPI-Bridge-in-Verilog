@@ -34,12 +34,14 @@ The design is written entirely in **Verilog HDL** and functionally verified usin
 **Register Map Example:**
 | Address | Register Name     | Description                              |
 |----------|------------------|------------------------------------------|
-| 0x00     | CONTROL          | Bit[0]: Start, Bit[1]: Protocol Select   |
-| 0x04     | STATUS           | Bit[0]: TX Done, Bit[1]: RX Valid, Bit[2]: Busy |
-| 0x08     | TX_DATA          | Data to be transmitted                   |
-| 0x0C     | RX_DATA          | Received data                            |
-| 0x10     | SPI_MODE         | CPOL, CPHA, Clock Divider                |
-| 0x14     | UART_BAUD        | Baud rate configuration (e.g., 9600)     |
+| 0x00     | CONTROL          | Bit[0]: UART_TX_Start, Bit[1]: SPI_Start, Bit[2]: CPOL, CPHA   |
+| 0x04     | STATUS           | Bit[0]: UART_TX_Busy,  Bit[1]: SPI_Done |
+| 0x08     | UART_TX_DATA          | Byte to send via UART                   |
+| 0x0C     | UART_RX_DATA          | Last received UART byte                            |
+| 0x10     | SPI_TX_DATA         | Byte to send via SPI                |
+| 0x14     | SPI_rX_DATA        | Last received SPI byte     |
+| 0x18     | UART_BAUD   | Baud rate for UART(eg. 9600)  |
+| 0x1C     | SPI_DIV     | Clock Divider value for SPI
 
 ---
 
@@ -73,15 +75,7 @@ The design was verified on **ModelSim** using a comprehensive testbench that:
 
 ---
 
-## 📈 Results
-| Parameter                  | UART | SPI  |
-|-----------------------------|-------|------|
-| Max Verified Baud Rate      | 115200 bps | 5 MHz SCLK |
-| Timing Coverage             | 100% | 100% |
-| Functional Coverage          | 100% | 100% |
-| Configuration Switching Time | < 1 AXI cycle | < 1 AXI cycle |
 
----
 
 ## 🧰 Tools Used
 - **HDL:** Verilog  
