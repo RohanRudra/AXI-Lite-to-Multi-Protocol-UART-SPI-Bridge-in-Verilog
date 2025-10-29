@@ -72,7 +72,14 @@ The design was verified on **ModelSim** using a comprehensive testbench that:
 - 100% signal and timing coverage achieved.  
 - Verified correct protocol switching without metastability.  
 - Reliable full-duplex communication in both modes.
+- UART TX Waveform:
+![UART_TX_Waveform](https://github.com/RohanRudra/AXI-Lite-to-Multi-Protocol-UART-SPI-Bridge-in-Verilog/blob/master/Images/UART_TX_waveform.png)
 
+- UART RX Waveform:
+![UART_RX_Waveform](https://github.com/RohanRudra/AXI-Lite-to-Multi-Protocol-UART-SPI-Bridge-in-Verilog/blob/master/Images/UART_RX_waveform.png)
+
+- SPI Full Duplex Waveform:
+![SPI_Waveform](https://github.com/RohanRudra/AXI-Lite-to-Multi-Protocol-UART-SPI-Bridge-in-Verilog/blob/master/Images/SPI_TX%26RX_waveform.png)
 ---
 
 
