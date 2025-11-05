@@ -32,7 +32,7 @@ module AXILite_slave_if #(
     output reg                  S_AXI_RVALID,
     input                       S_AXI_RREADY,
 
-    // AXI <-> UART control signals
+    // AXI <-> UART/SPI control signals
     output [DATA_WIDTH-1:0]  control_reg,
     input [DATA_WIDTH-1:0]  status_reg,
     output [7:0]  tx_uart,
@@ -103,7 +103,7 @@ module AXILite_slave_if #(
     // 0x1C	SPI_DIV	        clock divider value for SPI
 
 
-    //Controlling AXI <-> UART signals
+    //Controlling AXI <-> UART/SPI signals
     always @(posedge ACLK or negedge ARESETn) begin
         if (!ARESETn) begin
             mem[1] <= 0;
